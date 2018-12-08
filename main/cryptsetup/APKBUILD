@@ -12,7 +12,7 @@ makedepends_build=""
 makedepends_host="lvm2-dev openssl-dev popt-dev util-linux-dev
 	json-c-dev argon2-dev"
 makedepends="$makedepends_build $makedepends_host"
-checkdepends="device-mapper sharutils which bash"
+checkdepends="device-mapper sharutils which bash vim coreutils"
 subpackages="$pkgname-dev $pkgname-doc $pkgname-libs $pkgname-openrc"
 source="https://www.kernel.org/pub/linux/utils/$pkgname/v${pkgver%.*}/$pkgname-$pkgver.tar.gz
 	flush-stdout.patch
