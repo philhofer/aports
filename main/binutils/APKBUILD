@@ -1,7 +1,7 @@
 # Maintainer: Natanael Copa <ncopa@alpinelinux.org>
 pkgname=binutils
 pkgver=2.31.1
-pkgrel=2
+pkgrel=3
 pkgdesc="Tools necessary to build programs"
 url="https://www.gnu.org/software/binutils/"
 depends=""
@@ -31,6 +31,9 @@ fi
 #   - CVE-2017-7614
 
 build() {
+	# binutils doesn't build cleanly with clang :(
+	export CC=gcc
+
 	local _sysroot=/
 	local _cross_configure="--enable-install-libiberty --enable-shared"
 	local _arch_configure=""
